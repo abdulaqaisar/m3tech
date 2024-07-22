@@ -47,7 +47,7 @@
     ================================================== -->
     <header class="s-header">
       <div class="header-logo">
-        <a class="site-logo" href="index.html">
+        <a class="site-logo" href="Pages/index.html">
           <a class="smoothscroll" href="#contact" title="contact">
             <img src="m3.png" alt="Homepage"
           /></a>
@@ -69,11 +69,44 @@
             <li>
               <a class="smoothscroll" href="#about" title="about">About</a>
             </li>
+           
             <li>
+              <a class="smoothscroll" href="#" title="services">
+                  Services <i id="arrowdown" class="fa-solid fa-circle-chevron-down" style="color: green;"></i>
+              </a>
+              <ul id="dropdownMenu" class="dropdown" style="display:none ">
+                  <li style="font-size: medium"><a href="#cs">Customer Services</a></li>
+                  <li style="font-size: medium"><a href="#services">Airbnb Co-Hosting</a></li>
+                  <li style="font-size: medium"><a href="#services">Digital Marketing</a></li>
+                  <li style="font-size: medium"><a href="#services">Sales & Marketing</a></li>
+                  <li style="font-size: medium"><a href="#services">Web Design</a></li>
+                  <li style="font-size: medium"><a href="#services">Search Engine Optimization</a></li>
+                  <li style="font-size: medium"><a href="#services">Call Center Services</a></li>
+                  <li style="font-size: medium"><a href="#services">Outbound / Inbound</a></li>
+              </ul>
+          </li>
+          
+
+
+            <!-- <li>
               <a class="smoothscroll" href="#services" title="services"
-                >Services</a
-              >
-            </li>
+                >Services <i id="arrowdown" class="fa-solid fa-circle-chevron-down"></i></a>
+                
+                <ul class="dropdown" style="display:none">
+                  <li><a href="#service1">Customer Services</a></li>
+                  <li><a href="#service2">Airbnb Co-Hosting Sevices</a></li>
+                  <li><a href="#service3">Digital Marketing</a></li>
+                  <li><a href="#service4">Sales & Marketing</a></li>
+                  <li><a href="#service5">Web Design</a></li>
+                  <li><a href="#service6">Search Engine Optimization</a></li>
+                  <li><a href="#service6">Call Center Sevices</a></li>
+                  <li><a href="#service6">Outbond / Inbound</a></li>
+              </ul>
+            </li> -->
+           
+           
+           
+           
             <li>
               <a class="smoothscroll" href="#works" title="works">Works</a>
             </li>
@@ -129,7 +162,7 @@
       id="home"
       class="s-home target-section"
       data-parallax="scroll"
-      data-image-src="images/hero-bg.jpg"
+      data-image-src="images/a-min.jpg"
       data-natural-width="3000"
       data-natural-height="2000"
       data-position-y="center"
@@ -270,7 +303,7 @@
       <!-- end section-header -->
 
       <div class="row services-list block-1-2 block-tab-full">
-        <div class="col-block service-item" data-aos="fade-up">
+        <div id= "cs" class="col-block service-item" data-aos="fade-up">
           <div class="service-icon">
             <i class="icon-paint-brush"></i>
           </div>
@@ -820,8 +853,8 @@
           <form
             name="contactForm"
             id="contactForm"
-            method="post"
-            action="inc/sendEmail.php"
+            method="POST"
+            action="/inc/sendEmail.php"
             novalidate="novalidate"
           >
             <fieldset>
