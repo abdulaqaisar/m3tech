@@ -6,48 +6,49 @@
 (function ($) {
   "use strict";
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const dropdownIcon = document.getElementById('arrowdown');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const smoothScrollLinks = document.querySelectorAll('.smoothscroll');
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownIcon = document.getElementById("arrowdown");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    const smoothScrollLinks = document.querySelectorAll(".smoothscroll");
 
     if (dropdownIcon && dropdownMenu) {
-        dropdownIcon.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
-                dropdownMenu.style.display = 'block';
-                document.addEventListener('click', function(e) {
-                  if (!dropdownMenu.contains(e.target) && !dropdownIcon.contains(e.target)) {
-                      dropdownMenu.style.display = 'none';
-                  }
-              });
-            } 
-            
-            else {
-                dropdownMenu.style.display = 'none';
+      dropdownIcon.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (
+          dropdownMenu.style.display === "none" ||
+          dropdownMenu.style.display === ""
+        ) {
+          dropdownMenu.style.display = "block";
+          document.addEventListener("click", function (e) {
+            if (
+              !dropdownMenu.contains(e.target) &&
+              !dropdownIcon.contains(e.target)
+            ) {
+              dropdownMenu.style.display = "none";
             }
-        });
+          });
+        } else {
+          dropdownMenu.style.display = "none";
+        }
+      });
     } else {
-        alert('Dropdown icon or menu not found');
+      alert("Dropdown icon or menu not found");
     }
 
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    smoothScrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      });
     });
-});
-
-
-
+  });
 
   var cfg = {
       scrollDuration: 800, // smoothscroll duration
@@ -348,48 +349,48 @@
 
   /* Contact Form
    * ------------------------------------------------------ */
-  var clContactForm = function () {
-    /* local validation */
-    $("#contactForm").validate({
-      /* submit via ajax */
-      submitHandler: function (form) {
-        var sLoader = $(".submit-loader");
+  // var clContactForm = function () {
+  //   /* local validation */
+  //   $("#contactForm").validate({
+  //     /* submit via ajax */
+  //     submitHandler: function (form) {
+  //       var sLoader = $(".submit-loader");
 
-        $.ajax({
-          type: "POST",
-          url: "http://localhost/inc/sendEmail.php",
-          data: $(form).serialize(),
-          beforeSend: function () {
-            sLoader.slideDown("slow");
-          },
-          success: function (msg) {
-            console.log(msg);
-            // Message was sent
-            if (msg == "OK") {
-              sLoader.slideUp("slow");
-              $(".message-warning").fadeOut();
-              $("#contactForm").fadeOut();
-              $(".message-success").fadeIn();
-            }
-            // There was an error
-            else {
-              sLoader.slideUp("slow");
-              $(".message-warning").html(msg);
-              $(".message-warning").slideDown("slow");
-            }
-          },
-          error: function (error) {
-            console.log(error);
-            sLoader.slideUp("slow");
-            $(".message-warning").html(
-              "Something went wrong. Please try again."
-            );
-            $(".message-warning").slideDown("slow");
-          },
-        });
-      },
-    });
-  };
+  //       $.ajax({
+  //         type: "POST",
+  //         url: "http://localhost/inc/sendEmail.php",
+  //         data: $(form).serialize(),
+  //         beforeSend: function () {
+  //           sLoader.slideDown("slow");
+  //         },
+  //         success: function (msg) {
+  //           console.log(msg);
+  //           // Message was sent
+  //           if (msg == "OK") {
+  //             sLoader.slideUp("slow");
+  //             $(".message-warning").fadeOut();
+  //             $("#contactForm").fadeOut();
+  //             $(".message-success").fadeIn();
+  //           }
+  //           // There was an error
+  //           else {
+  //             sLoader.slideUp("slow");
+  //             $(".message-warning").html(msg);
+  //             $(".message-warning").slideDown("slow");
+  //           }
+  //         },
+  //         error: function (error) {
+  //           console.log(error);
+  //           sLoader.slideUp("slow");
+  //           $(".message-warning").html(
+  //             "Something went wrong. Please try again."
+  //           );
+  //           $(".message-warning").slideDown("slow");
+  //         },
+  //       });
+  //     },
+  //   });
+  // };
 
   /* Animate On Scroll
    * ------------------------------------------------------ */
