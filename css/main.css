@@ -2911,13 +2911,14 @@ html.no-csstransitions .home-content__main {
 
 .clients-testimonials .testimonials__name {
   font-family: "montserrat-semibold", sans-serif;
-  color: #000000;
+  color: #fff;
 }
 
 .clients-testimonials .testimonials__pos {
   font-family: "montserrat-light", sans-serif;
   font-size: 1.4rem;
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 
 .clients-testimonials .testimonials .slick-arrow {
