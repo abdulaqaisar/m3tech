@@ -3037,6 +3037,10 @@ html.no-csstransitions .home-content__main {
   position: relative;
 }
 
+.form-input{
+  border: 1px solid black;
+}
+
 .s-contact .overlay {
   position: absolute;
   top: 0;
@@ -3069,7 +3073,7 @@ html.no-csstransitions .home-content__main {
   padding: 0 2rem;
   margin: 0;
   color: #ffffff;
-  background: #1d74b2;
+  background: transparent;
 }
 
 .s-contact .form-field label::after {
@@ -3127,9 +3131,9 @@ html.no-csstransitions .home-content__main {
 .contact-content input[type="password"],
 .contact-content textarea,
 .contact-content select {
-  color: rgba(255, 255, 255, 0.6);
-  border-bottom: 1px solid rgb(255, 255, 255);
-  margin-bottom: 0.9rem;
+  color: white;
+  border-bottom: 1px solid rgb(244, 241, 241);
+  margin-bottom: 0.6rem;
 }
 
 .contact-content input[type="email"]:focus,
